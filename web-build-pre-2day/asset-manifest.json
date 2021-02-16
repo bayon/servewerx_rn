@@ -1,11 +1,11 @@
 {
   "files": {
-    "app.js": "/web-build/static/js/app.48159db8.chunk.js",
-    "app.js.map": "/web-build/static/js/app.48159db8.chunk.js.map",
+    "app.js": "/web-build/static/js/app.9fa92e47.chunk.js",
+    "app.js.map": "/web-build/static/js/app.9fa92e47.chunk.js.map",
     "runtime~app.js": "/web-build/static/js/runtime~app.0960814e.js",
     "runtime~app.js.map": "/web-build/static/js/runtime~app.0960814e.js.map",
-    "static/js/2.38385fea.chunk.js": "/web-build/static/js/2.38385fea.chunk.js",
-    "static/js/2.38385fea.chunk.js.map": "/web-build/static/js/2.38385fea.chunk.js.map",
+    "static/js/2.c293a9d2.chunk.js": "/web-build/static/js/2.c293a9d2.chunk.js",
+    "static/js/2.c293a9d2.chunk.js.map": "/web-build/static/js/2.c293a9d2.chunk.js.map",
     "fonts/AntDesign.ttf": "/web-build/./fonts/AntDesign.ttf",
     "fonts/Entypo.ttf": "/web-build/./fonts/Entypo.ttf",
     "fonts/Feather.ttf": "/web-build/./fonts/Feather.ttf",
@@ -24,12 +24,13 @@
     "index.html": "/web-build/index.html",
     "manifest.json": "/web-build/manifest.json",
     "serve.json": "/web-build/serve.json",
-    "static/js/2.38385fea.chunk.js.LICENSE.txt": "/web-build/static/js/2.38385fea.chunk.js.LICENSE.txt",
+    "static/js/2.c293a9d2.chunk.js.LICENSE.txt": "/web-build/static/js/2.c293a9d2.chunk.js.LICENSE.txt",
+    "static/media/bayon_forte.jpg": "/web-build/static/media/bayon_forte.84094a04.jpg",
     "static/media/icon.png": "/web-build/static/media/icon.608e4d9d.png"
   },
   "entrypoints": [
     "static/js/runtime~app.0960814e.js",
-    "static/js/2.38385fea.chunk.js",
-    "static/js/app.48159db8.chunk.js"
+    "static/js/2.c293a9d2.chunk.js",
+    "static/js/app.9fa92e47.chunk.js"
   ]
 }
