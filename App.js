@@ -49,7 +49,7 @@ function homeNavigator() {
         
       }}
     >
-      <Stack.Screen name="Bayon Forte" component={HomeScreen} />
+      <Stack.Screen name="servewerx.com" component={HomeScreen} />
     </Stack.Navigator>
   );
 }
@@ -129,7 +129,7 @@ export default function App() {
       <NavigationContainer>
         <Drawer.Navigator initialRouteName="Login">
           
-          <Drawer.Screen name="Bayon" component={tabNavigator} />
+          <Drawer.Screen name="Servewerx" component={tabNavigator} />
           <Drawer.Screen name="Login" component={homeNavigator} />
           <Drawer.Screen name="Register" component={registerNavigator} />
           <Drawer.Screen name="Logout" component={logoutNavigator} />

@@ -79,7 +79,7 @@ const HomeScreen = (navData) => {
             <View style={styles.container}>
               <View style={styles.logo}>
                 <Image
-                  source={require("../assets/bayon_forte.jpg")}
+                  source={require("../assets/icon.png")}
                   style={styles.image}
                 />
               </View>
