@@ -120,6 +120,7 @@ const HomeScreen = (navData) => {
                   <Text style={styles.registerText}>
                     Don't Have an Account?
                   </Text>
+                  <Text>remove after test.</Text>
                   <TouchableOpacity
                     onPress={() => navData.navigation.navigate("Register")}
                   >
