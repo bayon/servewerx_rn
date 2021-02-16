@@ -64,7 +64,7 @@ const HomeScreen = (navData) => {
                 if (result.success) {
                   try {
                     await AsyncStorage.setItem("token", result.token);
-                    navData.navigation.navigate("Bayon");
+                    navData.navigation.navigate("Servewerx");
                   } catch (error) {
                     console.log(error);
                   }
