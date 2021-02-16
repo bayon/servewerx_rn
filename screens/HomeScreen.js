@@ -82,6 +82,10 @@ const HomeScreen = (navData) => {
                   source={require("../assets/icon.png")}
                   style={styles.image}
                 />
+                <Text>Tell me what you need to run your business better.</Text>
+                <Text>cell: 812-267-0592</Text>
+                
+
               </View>
               <View>
                 <TextInput
@@ -120,7 +124,7 @@ const HomeScreen = (navData) => {
                   <Text style={styles.registerText}>
                     Don't Have an Account?
                   </Text>
-                  <Text>remove after test.</Text>
+                   
                   <TouchableOpacity
                     onPress={() => navData.navigation.navigate("Register")}
                   >

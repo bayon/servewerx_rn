@@ -14,6 +14,8 @@ import SkillsScreen from "./screens/SkillsScreen";
 const Drawer = createDrawerNavigator();
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
+//PACKAGE>JSON HOMEPAGE: 
+// ? https://www.servewerx.com/static/js/2.906ceab3.chunk.js net::ERR_ABORTED 404 (Not Found) 
 
 const HeaderLeft = () => {
   const navigation = useNavigation();
