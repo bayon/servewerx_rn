@@ -7,11 +7,11 @@ import React from "react";
 import { Image, StyleSheet } from 'react-native';
 import { Provider } from "react-redux";
 import store from "./redux/store";
-import ExperienceScreen from "./screens/ExperienceScreen";
 import HomeScreen from "./screens/HomeScreen";
 import LogoutScreen from "./screens/LogoutScreen";
 import RegisterScreen from "./screens/RegisterScreen";
-import SkillsScreen from "./screens/SkillsScreen";
+import ServiceNeededScreen from "./screens/ServiceNeededScreen";
+import ServiceProvidedScreen from "./screens/ServiceProvidedScreen";
 const Drawer = createDrawerNavigator();
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -84,33 +84,33 @@ function logoutNavigator() {
   );
 }
 
-function skillsNavigator() {
+function serviceProvidedNavigator() {
   return (
     <Stack.Navigator
       screenOptions={{
         headerLeft: () => <HeaderLeft />,
       }}
     >
-      <Stack.Screen name="Skills" component={SkillsScreen} />
+      <Stack.Screen name="Service Provided" component={ServiceProvidedScreen} />
     </Stack.Navigator>
   );
 }
 
-function experienceNavigator() {
+function serviceNeededNavigator() {
   return (
     <Stack.Navigator
       screenOptions={{
         headerLeft: () => <HeaderLeft />,
       }}
     >
-      <Stack.Screen name="Experience" component={ExperienceScreen} />
+      <Stack.Screen name="Service Needed" component={ServiceNeededScreen} />
     </Stack.Navigator>
   );
 }
 function tabNavigator() {
   return (
     <Tab.Navigator
-      initialRouteName="Skills"
+      initialRouteName="ServiceProvided"
       barStyle={{ marginBottom: 30, fontSize: 40 }}
       tabBarOptions={{
         labelStyle: {
@@ -119,8 +119,8 @@ function tabNavigator() {
         },
       }}
     >
-      <Tab.Screen name="Skills" component={skillsNavigator} />
-      <Tab.Screen name="Experience" component={experienceNavigator} />
+      <Tab.Screen name="Service Provided" component={serviceProvidedNavigator} />
+      <Tab.Screen name="Service Needed" component={serviceNeededNavigator} />
     </Tab.Navigator>
   );
 }
