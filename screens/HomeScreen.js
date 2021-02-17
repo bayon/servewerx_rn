@@ -40,6 +40,10 @@ const HomeScreen = (navData) => {
   useEffect( () => {
     setInProgress(false)
   },[inProgress])
+
+ 
+   
+
   // Check if already logged in.
   var auth = useSelector((state) => state.auth.authorized);
   
@@ -97,7 +101,10 @@ const HomeScreen = (navData) => {
                   style={styles.image}
                 />
                 <Text>Let 'em know</Text>
-                 
+                { inProgress && 
+                  <ActivityIndicator size="small" color="#0000ff" />
+                   
+                }
                 
 
               </View>
@@ -136,10 +143,7 @@ const HomeScreen = (navData) => {
                   <Text style={styles.buttonText}>Login</Text>
                 </TouchableOpacity>
 
-                { inProgress && 
-                  <ActivityIndicator size="small" color="#0000ff" />
-                   
-                }
+              
                
 
                 <View style={styles.registerContainer}>

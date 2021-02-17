@@ -71,8 +71,7 @@ const ServiceNeededScreen = (props) => {
   const serviceNeededDescription = `My old deck is falling apart right out under my feet.`;
    return (
     <ScrollView>
-      https://www.servewerx.com/static/media/servewerx_logo.53c6010f.png
-
+ 
       <Card
         image={defaultLogo}
         resizeMode="contain"
