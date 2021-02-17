@@ -19,7 +19,7 @@
     "favicon.ico": "/favicon.ico",
     "index.html": "/index.html",
     "manifest.json": "/manifest.json",
-    "static/media/icon.png": "/static/media/icon.608e4d9d.png"
+    "static/media/servewerx_logo.png": "/static/media/servewerx_logo.53c6010f.png"
   },
   "entrypoints": [
     "static/js/bundle.js"
