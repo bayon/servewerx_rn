@@ -1,9 +1,9 @@
 import AsyncStorage from "@react-native-async-storage/async-storage";
 //npm install formik yup
 import { Formik } from "formik";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import {
-  Alert,
+  ActivityIndicator, Alert,
   Button, Image,
   KeyboardAvoidingView,
   Platform,
@@ -17,19 +17,32 @@ import { useDispatch, useSelector } from "react-redux";
 import * as yup from "yup";
 import * as authAction from "../redux/actions/authAction";
 import FormStyles from "./FormStyles";
-
 const formSchema = yup.object({
   email: yup.string().email().required(),
   password: yup.string().required().min(6),
 });
-
 const styles = FormStyles;
+
+
+/*
+SVG major pain in the ass for react-native: 
+https://svgtopng.com/
+
+*/
+
+
+
 
 const HomeScreen = (navData) => {
   const dispatch = useDispatch();
+  const [inProgress,setInProgress] = useState(false) ;
 
+  useEffect( () => {
+    setInProgress(false)
+  },[inProgress])
   // Check if already logged in.
   var auth = useSelector((state) => state.auth.authorized);
+  
   if (auth) {
     return (
       <View style={styles.container}>
@@ -58,6 +71,7 @@ const HomeScreen = (navData) => {
           validationSchema={formSchema}
           onSubmit={(values) => {
             console.log(values);
+            setInProgress(true)
             dispatch(authAction.loginUser(values))
               .then(async (result) => {
                 console.log(result);
@@ -79,14 +93,15 @@ const HomeScreen = (navData) => {
             <View style={styles.container}>
               <View style={styles.logo}>
                 <Image
-                  source={require("../assets/icon.png")}
+                  source={require("../assets/servewerx_logo.png")}
                   style={styles.image}
                 />
-                <Text>Tell me what you need to run your business better.</Text>
-                <Text>cell: 812-267-0592</Text>
+                <Text>Let 'em know</Text>
+                 
                 
 
               </View>
+           
               <View>
                 <TextInput
                   style={styles.inputBox}
@@ -120,6 +135,13 @@ const HomeScreen = (navData) => {
                 >
                   <Text style={styles.buttonText}>Login</Text>
                 </TouchableOpacity>
+
+                { inProgress && 
+                  <ActivityIndicator size="small" color="#0000ff" />
+                   
+                }
+               
+
                 <View style={styles.registerContainer}>
                   <Text style={styles.registerText}>
                     Don't Have an Account?
@@ -128,6 +150,7 @@ const HomeScreen = (navData) => {
                   <TouchableOpacity
                     onPress={() => navData.navigation.navigate("Register")}
                   >
+
                     <Text style={styles.registerButton}>Register</Text>
                   </TouchableOpacity>
                 </View>

@@ -4,22 +4,24 @@ import { createDrawerNavigator } from "@react-navigation/drawer";
 import { NavigationContainer, useNavigation } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import React from "react";
+import { Image, StyleSheet } from 'react-native';
 import { Provider } from "react-redux";
 import store from "./redux/store";
 import ExperienceScreen from "./screens/ExperienceScreen";
 import HomeScreen from "./screens/HomeScreen";
-import LogoutScreen from './screens/LogoutScreen';
+import LogoutScreen from "./screens/LogoutScreen";
 import RegisterScreen from "./screens/RegisterScreen";
 import SkillsScreen from "./screens/SkillsScreen";
 const Drawer = createDrawerNavigator();
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
-//PACKAGE>JSON HOMEPAGE: 
-// ? https://www.servewerx.com/static/js/2.906ceab3.chunk.js net::ERR_ABORTED 404 (Not Found) 
+//PACKAGE>JSON HOMEPAGE:
+// ? https://www.servewerx.com/static/js/2.906ceab3.chunk.js net::ERR_ABORTED 404 (Not Found)
 
 const HeaderLeft = () => {
   const navigation = useNavigation();
   return (
+     
     <MaterialIcons
       name="menu"
       size={24}
@@ -27,19 +29,20 @@ const HeaderLeft = () => {
         navigation.openDrawer();
       }}
     />
+
+     
   );
 };
 
 const HeaderRight = () => {
   const navigation = useNavigation();
   return (
-    <MaterialIcons
-      name="login"
-      size={24}
-      onPress={() => {
-        navigation.navigate("Logout");
-      }}
-    />
+    
+     <Image
+        source={require("./assets/servewerx_logo.png")}
+        style={styles.logo}
+      />
+    
   );
 };
 
@@ -48,7 +51,7 @@ function homeNavigator() {
     <Stack.Navigator
       screenOptions={{
         headerLeft: () => <HeaderLeft />,
-        
+        headerRight: () => <HeaderRight />,
       }}
     >
       <Stack.Screen name="servewerx.com" component={HomeScreen} />
@@ -59,17 +62,16 @@ function homeNavigator() {
 function registerNavigator() {
   return (
     <Stack.Navigator
-    screenOptions={{
-      headerLeft: () => <HeaderLeft />,
-    }}
+      screenOptions={{
+        headerLeft: () => <HeaderLeft />,
+        headerRight: () => <HeaderRight />,
+      }}
     >
       <Stack.Screen name="Register" component={RegisterScreen} />
     </Stack.Navigator>
   );
 }
 
-
- 
 function logoutNavigator() {
   return (
     <Stack.Navigator
@@ -81,7 +83,7 @@ function logoutNavigator() {
     </Stack.Navigator>
   );
 }
- 
+
 function skillsNavigator() {
   return (
     <Stack.Navigator
@@ -109,15 +111,13 @@ function tabNavigator() {
   return (
     <Tab.Navigator
       initialRouteName="Skills"
-      barStyle={{marginBottom:30,fontSize:40}}
-      tabBarOptions={
-        {
-          labelStyle: {
-            fontSize:30,
-            padding:15
-          }
-        }
-      }
+      barStyle={{ marginBottom: 30, fontSize: 40 }}
+      tabBarOptions={{
+        labelStyle: {
+          fontSize: 30,
+          padding: 15,
+        },
+      }}
     >
       <Tab.Screen name="Skills" component={skillsNavigator} />
       <Tab.Screen name="Experience" component={experienceNavigator} />
@@ -126,11 +126,12 @@ function tabNavigator() {
 }
 
 export default function App() {
+  //Error: could not find react-redux context value; please ensure the component is wrapped in a <Provider>
+
   return (
     <Provider store={store}>
       <NavigationContainer>
         <Drawer.Navigator initialRouteName="Login">
-          
           <Drawer.Screen name="Servewerx" component={tabNavigator} />
           <Drawer.Screen name="Login" component={homeNavigator} />
           <Drawer.Screen name="Register" component={registerNavigator} />
@@ -141,4 +142,11 @@ export default function App() {
   );
 }
 
- 
+
+const styles = StyleSheet.create({
+  logo: {
+    width: 200,
+    height: 50,
+    marginTop:10
+  }
+})

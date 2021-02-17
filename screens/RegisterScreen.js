@@ -62,8 +62,8 @@ const RegisterScreen = (navData) => {
           {(props) => (
             <View style={styles.container}>
               <View style={styles.logo}>
-                <Image
-                  source={require("../assets/icon.png")}
+              <Image
+                  source={require("../assets/servewerx_logo.png")}
                   style={styles.image}
                 />
               </View>

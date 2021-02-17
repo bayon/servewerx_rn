@@ -26,7 +26,7 @@ function LogoutScreen({navigation}) {
           try {
             await AsyncStorage.removeItem("token");
             console.log("success ? ")
-            navigation.navigate("Home");
+            navigation.navigate("Login");
           } catch (error) {
             console.log(error);
           }

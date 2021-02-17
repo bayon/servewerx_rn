@@ -18,10 +18,10 @@ const FormStyles = StyleSheet.create({
       marginBottom: 40,
     },
     image: {
-      width: 100,
-      height: 100,
+      width: 400,
+      height: 200,
       borderRadius:20,
-      boxShadow:'2px 2px #dddddd',
+      
       margin:30
       
       
@@ -66,6 +66,7 @@ const FormStyles = StyleSheet.create({
       color: "#738289",
       fontSize: 16,
       fontWeight: "bold",
+      marginLeft: 15
     },
     error: {
         color: 'red',
