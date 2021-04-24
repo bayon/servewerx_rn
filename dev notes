@@ -1,0 +1,4 @@
+1st 
+run>  $ expo start 
+
+problem at the moment is that the tab navigation pages are visible before the user is logged in. 

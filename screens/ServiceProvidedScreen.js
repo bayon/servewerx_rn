@@ -26,6 +26,7 @@ const ServiceProvidedScreen = (props) => {
   useEffect(() => {
     loadProfile();
   });
+//import { useSelector } from "react-redux";
 
   var auth = useSelector((state) => state.auth.authorized);
   if (!auth) {
